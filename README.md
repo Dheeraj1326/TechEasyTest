@@ -9,10 +9,10 @@ git clone https://github.com/Dheeraj1326/TechEasyTest.git
 ```
 
 2. **Build the Project:**
--This are instuction for the bild and run the project.
-If you are using Springboot in Eclipse then right click on project.
-there is an popup menu select Run As >> Meven Build... >> inside Goal
-put following command. and hit the run button.
+    - This are instuction for the bild and run the project.
+    If you are using Springboot in Eclipse then right click on project.
+    there is an popup menu select Run As >> Meven Build... >> inside Goal
+    put following command. and hit the run button.
 ```
    clean install
 ```
