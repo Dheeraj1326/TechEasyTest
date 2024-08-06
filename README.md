@@ -9,18 +9,22 @@ git clone https://github.com/Dheeraj1326/TechEasyTest.git
 ```
 
 2. **Build the Project:**
-    -This are instuction for the bild and run the project.
-    If you are using Springboot in Eclipse then right click on project.
-    there is an popup menu select Run As >> Meven Build... >> inside Goal
-    put following command.
+-This are instuction for the bild and run the project.
+If you are using Springboot in Eclipse then right click on project.
+there is an popup menu select Run As >> Meven Build... >> inside Goal
+put following command. and hit the run button.
 ```
    clean install
 ```
 
 3. **Run the application:**
+- After Build Again right click on project.
+    there is an popup menu select 
+    Run As >> Spring Boot App . 
+    click the option project will run.
 
-   ```sh
-   mvn spring-boot:run
+   ```
+   spring-boot:run
    ```
 
 4. **Access the H2 console:**
