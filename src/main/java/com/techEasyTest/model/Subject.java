@@ -1,11 +1,14 @@
 package com.techEasyTest.model;
 
 import java.util.Date;
+import java.util.Set;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -24,50 +27,54 @@ public class Subject {
 	
 	private int status;
 
-	protected long getId() {
+	public long getId() {
 		return id;
 	}
 
-	protected void setId(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
-	protected void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
+	
 
-	protected Date getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
-	protected void setCreated(Date created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
-	protected Date getModified() {
+	public Date getModified() {
 		return modified;
 	}
 
-	protected void setModified(Date modified) {
+	public void setModified(Date modified) {
 		this.modified = modified;
 	}
 
-	protected int getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	protected void setStatus(int status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
+	
+	
+
 	@Override
 	public String toString() {
-		return "Subject [id=" + id + ", name=" + name + ", created=" + created + ", modified=" + modified + ", status="
-				+ status + "]";
+		return "Subject [id=" + id + ", name=" + name + ", created=" + created
+				+ ", modified=" + modified + ", status=" + status + "]";
 	}
 
 	public Subject() {

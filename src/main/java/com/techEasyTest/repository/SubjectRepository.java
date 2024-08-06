@@ -7,5 +7,5 @@ import com.techEasyTest.model.Subject;
 
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, Long>{
-
+	public Subject findSubjectById(Long id);
 }

@@ -1,5 +1,6 @@
 package com.techEasyTest.service.serviceImpl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,15 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public List<Student> studentList() {
 		// TODO Auto-generated method stub
-		return studentRepo.findAll(Sort.by(Direction.ASC, "name"));
+		return studentRepo.findAll();
 	}
 
 	@Override
 	public Student saveStudent(Student student) {
 		// TODO Auto-generated method stub
+		 student.setCreated(new Date());
+		 student.setModified(new Date());
+		 student.setStatus(1);
 		return studentRepo.save(student);
 	}
 

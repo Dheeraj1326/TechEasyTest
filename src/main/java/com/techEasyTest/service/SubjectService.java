@@ -10,4 +10,6 @@ public interface SubjectService {
   
   public Subject addSubject(Subject subject);
   
+  public Subject findById(long id);
+  
 }

@@ -1,15 +1,21 @@
 package com.techEasyTest.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -29,92 +35,90 @@ public class Student {
 	@Temporal(TemporalType.DATE)
 	private Date modified;
 	
-	@ManyToMany
-    @JoinTable(
-        name = "student_subject",
-        joinColumns = @JoinColumn(name = "student_id"),
-        inverseJoinColumns = @JoinColumn(name="subject_id")
-    )
-    private Set<Subject> subject;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Subject> subjects;
 
 	
 	private int status;
 
 
-	protected long getId() {
+	public long getId() {
 		return id;
 	}
 
 
-	protected void setId(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
 
-	protected void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
 
-	protected String getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
 
-	protected void setAddress(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
 
-	protected Date getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
 
-	protected void setCreated(Date created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 
-	protected Date getModified() {
+	public Date getModified() {
 		return modified;
 	}
 
 
-	protected void setModified(Date modified) {
+	public void setModified(Date modified) {
 		this.modified = modified;
 	}
 
 
-	protected Set<Subject> getSubject() {
-		return subject;
+	public List<Subject> getSubjects() {
+		return subjects;
 	}
 
 
-	protected void setSubject(Set<Subject> subject) {
-		this.subject = subject;
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
 
 
-	protected int getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
 
-	protected void setStatus(int status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
+
+
+	
 
 
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", address=" + address + ", created=" + created + ", modified="
-				+ modified + ", subject=" + subject + ", status=" + status + "]";
+				+ modified + ", subjects=" + subjects + ", status=" + status + "]";
 	}
 
 
